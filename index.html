@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .btn-secondary {
+            background-color: #008CBA;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #007B9A;
+        }
+        
+        .btn-warning {
+            background-color: #f44336;
+        }
+        
+        .btn-warning:hover {
+            background-color: #da190b;
+        }
+        
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-radius: 5px;
+            border-left: 4px solid #008CBA;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Basic HTML Page</h1>
+        
+        <p>This is a simple HTML page with some text content and interactive buttons. Click the buttons below to see different actions!</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        
+        <div class="button-container">
+            <button onclick="showMessage('Hello! You clicked the primary button!')">Primary Button</button>
+            <button class="btn-secondary" onclick="showMessage('Secondary button was clicked!')">Secondary Button</button>
+            <button class="btn-warning" onclick="clearMessage()">Clear Message</button>
+            <button onclick="changeBackgroundColor()">Change Color</button>
+        </div>
+        
+        <div id="output"></div>
+        
+        <p>This page demonstrates basic HTML structure with styled buttons and interactive JavaScript functionality. Feel free to explore and click around!</p>
+    </div>
+
+    <script>
+        function showMessage(message) {
+            const output = document.getElementById('output');
+            output.textContent = message;
+            output.style.display = 'block';
+        }
+        
+        function clearMessage() {
+            const output = document.getElementById('output');
+            output.style.display = 'none';
+        }
+        
+        function changeBackgroundColor() {
+            const colors = ['#f5f5f5', '#e8f4f8', '#f0f8e8', '#fff0e8', '#f8e8f8'];
+            const currentColor = document.body.style.backgroundColor;
+            let newColor;
+            
+            do {
+                newColor = colors[Math.floor(Math.random() * colors.length)];
+            } while (newColor === currentColor);
+            
+            document.body.style.backgroundColor = newColor;
+            showMessage('Background color changed!');
+        }
+    </script>
+</body>
+</html>
