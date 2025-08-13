@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic HTML Page</title>
+
     <script>
   window.intercomSettings = {
     api_base: "https://api-iam.intercom.io",
@@ -92,6 +93,22 @@
             border-left: 4px solid #008CBA;
             display: none;
         }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
@@ -111,7 +128,44 @@
         
         <div id="output"></div>
         
-        <p>This page demonstrates basic HTML structure with styled buttons and interactive JavaScript functionality. Feel free to explore and click around!</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>CRM FIELDS</th>
+                    <th>eventsAir contact fields</th>
+                    <th>re-fetch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>First Name</td>
+                    <td>ContactFirstName</td>
+                    <td>Re-fetch</td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td>ContactLastName</td>
+                    <td>Re-fetch</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>ContactEmail</td>
+                    <td>Re-fetch</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>ContactPhone</td>
+                    <td>Re-fetch</td>
+                </tr>
+                <tr>
+                    <td>Company</td>
+                    <td>ContactCompany</td>
+                    <td>Re-fetch</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>This page demonstrates basic HTML structure with styled buttons, interactive JavaScript functionality, and a data mapping table. Feel free to explore and click around!</p>
     </div>
 
     <script>
